@@ -93,7 +93,7 @@ describe('Account actions', () => {
       });
     });
 
-  it.only('Change name in My Details', () => {
+  it('Change name in My Details', () => {
   
       cy.get(':nth-child(2) > #account-navigation-data').click()
       cy.get('.account__data > :nth-child(1) > :nth-child(2) > .button').click()
@@ -160,7 +160,7 @@ describe('Add product to the basket',()=>{
   it('Add shoes to the basket', () => {
       cy.get(':nth-child(1) > .menu__category-link > span').click()
       cy.get(':nth-child(1) > .listing-product > .listing-product__link > .listing-product__image-block > .listing-product__image').click().wait(1000)
-      cy.get('[data-sizeeu="42.0"] > .size__button').click({force: true})
+      cy.get('[data-sizeeu="36.0"] > .size__button > .size__value').click({force: true})
       cy.get('.product__add-to-cart-button').click({force: true})
       cy.get('.add-to-cart__button-block > .button').click()
       cy.url().should('contain', 'https://skstore.eu/basket')
@@ -170,7 +170,7 @@ describe('Add product to the basket',()=>{
   it('Delete shoes from the basket', () => {
       cy.get(':nth-child(1) > .menu__category-link > span').click()
       cy.get(':nth-child(1) > .listing-product > .listing-product__link > .listing-product__image-block > .listing-product__image').click().wait(1000)
-      cy.get('[data-sizeeu="42.0"] > .size__button').click({force: true})
+      cy.get('[data-sizeeu="36.0"] > .size__button > .size__value').click({force: true})
       cy.get('.product__add-to-cart-button').click({force: true})
       cy.get('.add-to-cart__button-block > .button').click()
       cy.get('.basket-product__remove-form > .button').click({force: true})

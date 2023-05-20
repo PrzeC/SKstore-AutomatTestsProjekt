@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-20T15:23:00.036Z",
+    "end": "2023-05-20T15:23:10.230Z",
+    "duration": 10194,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "94a6d237-01df-42e8-b30a-61417d8fe77b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\PROJEKT\\SKstore.cy.js",
+      "file": "cypress\\e2e\\PROJEKT\\SKstore.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aedeaeed-4431-4553-bbab-35c9e2daa7c8",
+          "title": "Add product to the basket",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add shoes to the basket",
+              "fullTitle": "Add product to the basket Add shoes to the basket",
+              "timedOut": null,
+              "duration": 8005,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .menu__category-link > span').click();\ncy.get(':nth-child(1) > .listing-product > .listing-product__link > .listing-product__image-block > .listing-product__image').click().wait(1000);\ncy.get('[data-sizeeu=\"36.0\"] > .size__button > .size__value').click({\n  force: true\n});\ncy.get('.product__add-to-cart-button').click({\n  force: true\n});\ncy.get('.add-to-cart__button-block > .button').click();\ncy.url().should('contain', 'https://skstore.eu/basket');\ncy.get('.basket-product__info-all').should('be.visible');",
+              "err": {},
+              "uuid": "21f8946f-0383-405f-bf0f-e3846021e3aa",
+              "parentUUID": "aedeaeed-4431-4553-bbab-35c9e2daa7c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "21f8946f-0383-405f-bf0f-e3846021e3aa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8005,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

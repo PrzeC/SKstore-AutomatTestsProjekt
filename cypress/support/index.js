@@ -1,0 +1,1 @@
+import 'cypress-html-reporter/reporter';
