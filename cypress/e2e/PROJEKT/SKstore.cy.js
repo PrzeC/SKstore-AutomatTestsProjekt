@@ -5,24 +5,24 @@ beforeEach('Setup',()=>{
   cy.url().should('contain', 'skstore')
   
 })
-describe('Change language',()=>{   
+describe('1 Change language',()=>{   
 
-  it('Change language to Czech', () => {
+  it('1.1 Change language to Czech', () => {
       cy.get('#footer-language-button > .header__button-icon').click()
       cy.get(':nth-child(3) > .footer-select__link > .footer-select__link-name').click()
       cy.url().should('contain', 'https://skstore.eu/cs')
   })
-  it('Change language to Romania', () => {
+  it('1.2 Change language to Romania', () => {
       cy.get('#footer-language-button > .header__button-icon').click()
       cy.get(':nth-child(4) > .footer-select__link > .footer-select__link-name').click()
       cy.url().should('contain', 'https://skstore.eu/ro')
   })
-  it('Change language to Hungary', () => {
+  it('1.3 Change language to Hungary', () => {
       cy.get('#footer-language-button > .header__button-icon').click()
       cy.get(':nth-child(5) > .footer-select__link > .footer-select__link-name').click()
       cy.url().should('contain', 'https://skstore.eu/hu')
   })
-  it('Change language to Polish', () => {
+  it('1.4 Change language to Polish', () => {
       cy.get('#footer-language-button > .header__button-icon').click()
       cy.get('#footer-language-modal > .modal__content > .modal__body > .footer-select__list > :nth-child(1) > .footer-select__link').click()
       cy.url().should('contain', 'https://skstore.eu/pl')
@@ -30,15 +30,15 @@ describe('Change language',()=>{
   
 })
 
-describe('Login actions',()=>{   
+describe('2 Login actions',()=>{   
 
-  it('Shows log in pop up', () => {
+  it('2.1 Shows log in pop up', () => {
   
       cy.get('#header-login-modal-button > .header__button-icon').click()
       cy.get('#header-login-modal > .modal__content > .modal__body').should('be.visible')
   })
 
-  it('Close log in pop up', () => {
+  it('2.2 Close log in pop up', () => {
   
       cy.get('#header-login-modal-button > .header__button-icon').click()
       cy.get('#header-login-modal > .modal__content > .modal__body').should('be.visible')
@@ -46,7 +46,7 @@ describe('Login actions',()=>{
       cy.get('#header-login-modal > .modal__content > .modal__body').should('not.be.visible')
   })
 
-  it('Possibility to create a new account', () => {
+  it('2.3 Possibility to create a new account', () => {
   
       cy.get('#header-login-modal-button > .header__button-icon').click()
       cy.get('#header-login-modal > .modal__content > .modal__body').should('be.visible')
@@ -54,7 +54,7 @@ describe('Login actions',()=>{
       cy.url().should('contain', 'https://skstore.eu/register')
   })
 
-  it('Possibility to login in/out account', () => {
+  it('2.4 Possibility to login in/out account', () => {
   
       cy.get('#header-login-modal-button > .header__button-icon').click()
       cy.get('#header-login-modal > .modal__content > .modal__body').should('be.visible')
@@ -68,19 +68,7 @@ describe('Login actions',()=>{
 
 })
 
-// describe('Account actions',()=>{   
-
-//   beforeEach('Setup',()=>{
-//       cy.get('#header-login-modal-button > .header__button-icon').click()
-//       cy.get('#header-login-modal > .modal__content > .modal__body').should('be.visible')
-//       cy.get(':nth-child(3) > #email').click().type('testerautomat123@gmail.com')
-//       cy.get('.password-view-toggle > #password').click().type('Automatyczny123')
-//       cy.get('.auth > .auth__column > .auth__box > .form > :nth-child(6) > .button').click()
-//       cy.url().should('contain', 'https://skstore.eu/user')
-      
-//   })
-
-describe('Account actions', () => {
+describe('3 Account actions', () => {
     beforeEach('Setup', () => {
       cy.fixture('users').then((users) => {
         const { email, password } = users;
@@ -93,7 +81,7 @@ describe('Account actions', () => {
       });
     });
 
-  it('Change name in My Details', () => {
+  it('3.1 Change name in My Details', () => {
   
       cy.get(':nth-child(2) > #account-navigation-data').click()
       cy.get('.account__data > :nth-child(1) > :nth-child(2) > .button').click()
@@ -105,7 +93,7 @@ describe('Account actions', () => {
       cy.get(':nth-child(8) > form > .button').click()
   })
 
-  it('Add new adress in My Adresses', () => {
+  it('3.2 Add new adress in My Adresses', () => {
   
       cy.get('.account__navigation > :nth-child(3) > .button').click()
       cy.get('.account__address-button').click()
@@ -124,7 +112,7 @@ describe('Account actions', () => {
       cy.get(':nth-child(8) > form > .button').click()
   })
 
-  it('Change My Size im my account', () => {
+  it('3.3 Change My Size im my account', () => {
   
       cy.get('.account__navigation > :nth-child(5) > .button').click()
       cy.get('#shoes-dropdown > .dropdown__button').click()
@@ -139,15 +127,15 @@ describe('Account actions', () => {
   })
 })
 
-describe('Search on page',()=>{   
+describe('4 Search on page',()=>{   
 
-  it('Checking possibility of search item on page', () => {
+  it('4.1 Checking possibility of search item on page', () => {
       cy.get('.header__button-search-icon').click()
       cy.get('#header-search-form-input').click().type('lebron').type('{enter}').wait(1000)
       cy.url().should('contain', 'https://skstore.eu/products/lebron')
   })
 
-  it('Checking possibility of search item on page', () => {
+  it('4.2 Checking possibility of search item on page', () => {
       cy.get('.header__button-search-icon').click()
       cy.get('#header-search-form-input').click().type('harden vii').type('{enter}').wait(1000)
       cy.url().should('contain', 'https://skstore.eu/products/harden')
@@ -155,9 +143,9 @@ describe('Search on page',()=>{
   
 })
 
-describe('Add product to the basket',()=>{   
+describe('5 Add product to the basket',()=>{   
 
-  it('Add shoes to the basket', () => {
+  it('5.1 Add shoes to the basket', () => {
       cy.get(':nth-child(1) > .menu__category-link > span').click()
       cy.get(':nth-child(1) > .listing-product > .listing-product__link > .listing-product__image-block > .listing-product__image').click().wait(1000)
       cy.get('[data-sizeeu="36.0"] > .size__button > .size__value').click({force: true})
@@ -167,7 +155,7 @@ describe('Add product to the basket',()=>{
       cy.get('.basket-product__info-all').should('be.visible')
   })
 
-  it('Delete shoes from the basket', () => {
+  it('5.2 Delete shoes from the basket', () => {
       cy.get(':nth-child(1) > .menu__category-link > span').click()
       cy.get(':nth-child(1) > .listing-product > .listing-product__link > .listing-product__image-block > .listing-product__image').click().wait(1000)
       cy.get('[data-sizeeu="36.0"] > .size__button > .size__value').click({force: true})
