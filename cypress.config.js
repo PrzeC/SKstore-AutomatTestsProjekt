@@ -10,11 +10,11 @@ module.exports = defineConfig({
     reportDir: "cypress/reports",
     overwrite: false,
     html: true,
-    json: false
+    json: false,
+    projectId: "5bozs3",
   },
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
     },
   },
 });
