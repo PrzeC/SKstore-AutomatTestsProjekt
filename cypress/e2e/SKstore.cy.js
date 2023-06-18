@@ -148,11 +148,19 @@ describe('5 Add product to the basket',()=>{
   it('5.1 Add shoes to the basket', () => {
       cy.get(':nth-child(1) > .menu__category-link > span').click()
       cy.get(':nth-child(1) > .listing-product > .listing-product__link > .listing-product__image-block > .listing-product__image').click().wait(1000)
+<<<<<<< HEAD
 
 
      cy.get('[data-sizeeu="43.0"] > .size__button > .size__value').click({force: true})
 
 
+=======
+<<<<<<< HEAD
+      cy.get('[data-sizeeu="43.0"] > .size__button > .size__value').click({force: true})
+=======
+      cy.get('[data-sizeeu="36.0"] > .size__button > .size__value').click({force: true})
+>>>>>>> parent of 8826ffb (projekt_gotowy)
+>>>>>>> 83da8c717fea901d5088d2a9de822d893d8a41f6
       cy.get('.product__add-to-cart-button').click({force: true})
       cy.get('.add-to-cart__button-block > .button').click()
       cy.url().should('contain', 'https://skstore.eu/basket')
@@ -162,11 +170,19 @@ describe('5 Add product to the basket',()=>{
   it('5.2 Delete shoes from the basket', () => {
       cy.get(':nth-child(1) > .menu__category-link > span').click()
       cy.get(':nth-child(1) > .listing-product > .listing-product__link > .listing-product__image-block > .listing-product__image').click().wait(1000)
+<<<<<<< HEAD
 
 
       cy.get('[data-sizeeu="43.0"] > .size__button > .size__value').click({force: true})
 
 
+=======
+<<<<<<< HEAD
+      cy.get('[data-sizeeu="43.0"] > .size__button > .size__value').click({force: true})
+=======
+      cy.get('[data-sizeeu="36.0"] > .size__button > .size__value').click({force: true})
+>>>>>>> parent of 8826ffb (projekt_gotowy)
+>>>>>>> 83da8c717fea901d5088d2a9de822d893d8a41f6
       cy.get('.product__add-to-cart-button').click({force: true})
       cy.get('.add-to-cart__button-block > .button').click()
       cy.get('.basket-product__remove-form > .button').click({force: true})
